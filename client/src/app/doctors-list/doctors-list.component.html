@@ -1,0 +1,108 @@
+<div class="breadcrumb-content">
+  <img src="../../assets/images/banner-breadcrumb.jpg" alt="banner">
+  <div class="container">
+    <h3>Book appointments with best doctors near you</h3>
+  </div>
+</div>
+<div>
+  <div id="top-search" class=" navbar-default navbar listing-search ">
+    <div class=" navbar-collapse text-left">
+      <form class="form-inline advanced-serach" >
+        <div class="container">
+          <div class="input-field ">
+            <div class="form-group top-8">
+              <select name="avalablity" (change)="selectFilter('avalablity',$event)" class=form-control>
+                <option style="display: none" value="" selected="selected">Select Available</option>
+                <option value="Available Today">Available Today</option>
+                <option value="Available Tomorrow">Available Tomorrow</option>
+                <option value="Available in next 7 days">Available in next 7 days</option>
+
+              </select>
+            </div>
+            <div class="form-group top-8">
+              <i class="fa fa-chevron-down arrow"></i>
+              <select name="sepcialityid" (change)="selectFilter('sepcialityid',$event)" class=form-control>
+                <option value="" style="display: none" selected="selected">Select Specialty</option>
+                <option value="Accupressure">Accupressure</option>
+                <option value="Allergy &amp; Immunology">Allergy & Immunology</option>
+                <option value="Anaesthetist">Anaesthetist</option>
+                <option value="Anatomist">Anatomist</option>
+                <option value="Audiologist">Audiologist</option>
+                <option value="Ayurvedic">Ayurvedic</option>
+                <option value="Bariatric Surgery">Bariatric Surgery</option>
+                <option value="Cancer Surgeon">Cancer Surgeon</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Cardiothoracic">Cardiothoracic</option>
+                <option value="Chest Physician">Chest Physician</option>
+                <option value="Chiropractor">Chiropractor</option>
+                <option value="clinical Genetic">clinical Genetic</option>
+                <option value="Clinical Hematology">Clinical Hematology</option>
+                <option value="Critical Care Physician">Critical Care Physician</option>
+                <option value="Dental Surgeon">Dental Surgeon</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Diabetologist">Diabetologist</option>
+                <option value="Endocrinologist">Endocrinologist</option>
+                <option value="ENT Surgeon">ENT Surgeon</option>
+                <option value="Family Physician">Family Physician</option>
+                <option value="Neuro- Surgeon">Neuro- Surgeon</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Nuclear Medicine">Nuclear Medicine</option>
+                <option value="Obesity Consultant">Obesity Consultant</option>
+                <option value="Occupational Therapist">Occupational Therapist</option>
+                <option value="Urologist">Urologist</option>
+                <option value="Vascular Surgeon">Vascular Surgeon</option>
+              </select>
+            </div>
+            <div class="form-group top-8">
+              <select name="location" (change)="selectFilter('location',$event)" class=form-control>
+                <option style="margin-left: 20px" value="All">&nbsp; All Location</option>
+                <option style="margin-left: 20px" *ngFor="let item of locationArray"
+                  [value]="item._id.city+','+item._id.state">&nbsp; {{item._id.city+','+item._id.state}}</option>
+
+              </select>
+              <i class="fa fa-map-marker marker"></i>
+
+            </div>
+
+            <div class="form-group search top-8">
+              <input type="hidden" name="reset" value="reset" />
+              <button (click)="getDoctorList()" type="submit" id="submit" name="submit" class="btn-new btn-custom-search "><i
+                  class="fa fa-search"></i><span>Search</span></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="blog-content bg-white">
+
+  <div class="container">
+    <br>
+    <div class="row">
+<a *ngFor="let item of doctorList" class="cbp-caption" data-title="'Dr.'+item.name" rel="nofollow">
+        <div class="col-sm-3">
+          <div class="uou-block-6a rounded" style="border:1px solid #f4f4f4"> <img
+              style="height:200px;width:200px;padding-top:5px;"
+              src="../../assets/images/docdir38070.png" alt="">
+
+            <div style="background-color:#f4f4f4;padding-bottom:2%;">
+              <h6 style="padding-top:3%;text-transform: capitalize">Dr. {{' '+item.name}}<span *ngFor="let spcl of item.doctorType">{{spcl}}</span></h6>
+              <div style="margin-top:-7%;" id="ResponseRatingDiv9444" class="page_margin_top"> 
+              <button type="button" style="text-transform: capitalize !important" [routerLink]="'/bookingPage/'+item.doctor_id" class="btn btn-large btn-block btn-primary">book slot</button>
+               </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+  
+
+    </div>
+   
+    <!--END .navigation-links-->
+  </div> <!-- end .blog-list -->
+  <!--</div>            
+                </div> -->
+  <!-- end .page-content -->
+</div>

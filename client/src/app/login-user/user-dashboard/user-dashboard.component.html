@@ -1,0 +1,58 @@
+
+
+<div>
+        <div id="top-search" class=" navbar-default navbar listing-search ">
+          <div class=" navbar-collapse text-left">
+            <form class="form-inline advanced-serach" >
+              <div class="container">
+                <div class="input-field ">
+                  <div class="form-group top-8">
+                    <select name="avalablity" (change)="selectFilter($event)" class=form-control>
+
+                      <option *ngFor="let item of next7DateArray" [value]="item">{{item +'T00:00:00.000Z' | date:'mediumDate'}}</option>
+                  
+      
+                    </select>
+                  </div>
+                 
+      
+                
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+      <h2>Appointments Details</h2>
+      <table class="table table-condensed">
+            <thead>
+              <tr>
+                    <th >Appointment ID</th>
+                
+                <th >Name</th>
+                <th >Email Id</th>
+                <th >Number</th>
+                <th >Time</th>
+                <th >Status</th>
+
+               
+              </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let item1 of appointment" >
+                        <td>{{item1.appointment_id}}</td>
+                        <td>{{item1.patient_name}}</td>
+                        <td>{{item1.patinet_email}}</td>
+                        <td>{{item1.patinet_phone}}</td>
+                        <td>{{item1.appointment_date | date :'short'}}</td>
+                        <td *ngIf="item1.appointment_status!=='Open'">{{item1.appointment_status}}</td>
+                        <td *ngIf="item1.appointment_status==='Open'"><select (change)="ChangeApointmentStatus(item1.appointment_id,$event)">
+                          <option style="display: none" value="Open">Open</option>
+                          <option value="Closed">Close</option>
+                          <option value="Cancelled">Cancel</option>
+                        </select></td>
+                        </tr>
+                </tbody>
+                </table>
+      </div>

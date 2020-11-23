@@ -1,0 +1,278 @@
+<div *ngIf="loginpage" class="breadcrumb-content">
+        <img   src="../../assets/images/banner-breadcrumb.jpg" alt="banner">
+        <div class="container">
+            <h3>Login</h3>
+        </div>
+    </div>	
+    <div  *ngIf="loginpage" class="blog-content pt60">	
+        <div class="container"> 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="registration-style">
+                        <div class="row">
+                            <div id="iv-form3" class="col-md-12">
+                                                            <form id="iv_directories_registration1" name="iv_directories_registration1" class="form-horizontal" action="http://www.doctorsdirectoryindia.com/users/userRegistration" method="post" role="form">
+                                    <div class="content"> 
+                                        <h3  class="form-title">Login Details</h3>
+                                        <div class="form-content">
+                                            <div class="row">	
+                                                <div class="col-md-12"> 
+                                                    <div [formGroup] = "loginForm">
+                                                        <div id="selected-column-1" class=" ">
+                                                            <div class="text-center" id="loading"> </div>
+                                                          
+                                                            <div class="form-group row">									
+                                                                <label  class="col-md-3 control-label" >Email Address<span class="chili"></span></label>
+                                                                <div class="col-md-9">
+                                                                    <input type="email" name="email" id="email1"  formControlName="email"  class="form-control ctrl-textbox" placeholder="Enter email address"  >
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row ">									
+                                                                <label  class="col-md-3 control-label">Password<span class="chili"></span></label>
+                                                                <div class="col-md-9">
+                                                                    <input type="password" name="password" formControlName="password" class="form-control ctrl-textbox" placeholder="" >
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="form-group row ">									
+                                                                 <label  class="col-md-3 control-label">Country<span class="chili"></span></label>
+                                                                 <div class="col-md-9">
+                                                                    
+                                                                 </div>
+                                                             </div>-->
+                        
+                                                        </div>							
+                                                    </div>	
+                                                    <div class="row">
+                                                        <div class="col-md-3 "> 
+                                                        </div>
+                                                        <div class="col-md-9 "> 
+                                                            <div id="paypal-button">
+                                                                <div id="loading-3" style="display: none;"><img src='' /></div>
+                                                                <button  id="" name="" (click)="Submit()" type="submit" class="btn-new btn-custom ctrl-btn"  >Submit  </button>
+                                                            </div>	
+                                                        </div>	
+
+                                                    </div>	
+                                                    <div class="row">
+                                                            <div class="col-md-3 "> 
+                                                            </div>
+                                                            <div class="col-md-9 "> 
+                                                                <span *ngIf="plzFeelFieldCarefully" style="color: red">Please Fill The Form Carefully</span>
+                                                                <span *ngIf="successfulyRegister" style="color:green">Succes Fully Registered</span>
+                                                                <span *ngIf="errorMessage" style="color:red">  {{errorMessage}}</span>
+                                                              
+                                                            </div>	
+    
+                                                        </div>
+                                                    <div class="row">
+                                                            <div class="col-md-3 "> 
+                                                            </div>
+                                                            <div class="col-md-9 "> 
+                                                                <div id="paypal-button1q">
+                                                                    Dont have account ?
+                                                                    <a (click)="signup()">Signup</a>
+                                                                </div>	
+                                                            </div>	
+                                                                                                
+                                                        </div>													
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>	
+                                    <br/>
+                                </form>
+                                <div style="display: none">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--  end blog-single -->
+            </div>
+        </div> <!--  end blog-single -->
+    </div>
+    <div *ngIf="!loginpage" class="breadcrumb-content">
+            <img   src="../../assets/images/banner-breadcrumb.jpg" alt="banner">
+            <div class="container">
+                <h3>Registration</h3>
+            </div>
+        </div>	
+        <div  *ngIf="!loginpage" class="blog-content pt60">	
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="registration-style">
+                            <div class="row">
+                                <div id="iv-form3" class="col-md-12">
+                                                                <form id="iv_directories_registration1" name="iv_directories_registration1" class="form-horizontal" action="http://www.doctorsdirectoryindia.com/users/userRegistration" method="post" role="form">
+                                        <div class="content"> 
+                                            <h3  class="form-title">User Information</h3>
+                                            <div class="form-content">
+                                                <div class="row">	
+                                                    <div class="col-md-12"> 
+                                                        <div  [formGroup] = "signUpForm">
+                                                            <div id="selected-column-1" class=" ">
+                                                                <div class="text-center" id="loading"> </div>
+                                                                <div class="form-group row"  >									
+                                                                    <label  class="col-md-3 control-label">Name<span class="chili"></span></label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" formControlName="name"  name="firstname"   class="form-control ctrl-textbox" placeholder="Enter First Name"  >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row"  >									
+                                                                    <label  class="col-md-3 control-label">Contact Number<span class="chili"></span></label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text"  name="number"  formControlName="number"    class="form-control ctrl-textbox" placeholder="Enter Last Name"  >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">									
+                                                                    <label  class="col-md-3 control-label" >Email Address<span class="chili"></span></label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="email" name="email" id="email1"  formControlName="email"  class="form-control ctrl-textbox" placeholder="Enter email address"  >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row ">									
+                                                                    <label  class="col-md-3 control-label">Password<span class="chili"></span></label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="password" name="password" formControlName="password"  class="form-control ctrl-textbox" placeholder="" >
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <div class="form-group row ">									
+                                                                     <label  class="col-md-3 control-label">Country<span class="chili"></span></label>
+                                                                     <div class="col-md-9">
+                                                                        
+                                                                     </div>
+                                                                 </div>-->
+                                                                <div class="form-group row ">									
+                                                                    <label  class="col-md-3 control-label">Specialization<span class="chili"></span></label>
+                                                                    <div class="col-md-9" style="height: 200px;overflow-x:scroll">
+                                                                       <!-- <select name="usertype" id="usertype" (change)="selectSpecialization($event)"  class="form-control ctrl-textbox" >
+                                                                            <option value="">Select User Type</option>
+                                                                            <option value="user">General User</option>
+                                                                            <option value="medical">Health Care Provider</option>
+                                                                        </select>  --> 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)" value="Accupressure"> Accupressure &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Allergy & Immunology"> Allergy & Immunology &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Anaesthetist"> Anaesthetist &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Anatomist"> Anatomist &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Audiologist"> Audiologist &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Ayurvedic"> Ayurvedic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Bariatric Surgery"> Bariatric Surgery &nbsp;&nbsp;&nbsp;&nbsp;  
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Cancer Surgeon"> Cancer Surgeon &nbsp;&nbsp;&nbsp;&nbsp;  
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Cardiologist"> Cardiologist &nbsp;&nbsp;&nbsp;&nbsp;  
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Cardiothoracic"> Cardiothoracic &nbsp;&nbsp;&nbsp;&nbsp;  
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Chest Physician"> Chest Physician &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Chiropractor"> Chiropractor &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="clinical Genetic"> clinical Genetic &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Clinical Hematology"> Clinical Hematology &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Critical Care Physician"> Critical Care Physician &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Dental Surgeon"> Dental Surgeon &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Dermatologist"> Dermatologist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Diabetologist"> Diabetologist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Endocrinologist"> Endocrinologist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="ENT Surgeon"> ENT Surgeon &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Family Physician"> Family Physician &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Neuro- Surgeon"> Neuro- Surgeon &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Neurologist"> Neurologist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Nuclear Medicine"> Nuclear Medicine &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Obesity Consultant"> Obesity Consultant &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Occupational Therapist"> Occupational Therapist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Urologist"> Urologist &nbsp;&nbsp;&nbsp;&nbsp; 
+                                                                        <input class="form-control ctrl-textbox" type="checkbox" name="usertype" id="usertype" (change)="selectSpecialization($event)"  value="Vascular Surgeon"> Vascular Surgeon 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row ">									
+                                                                    <label  class="col-md-3 control-label">Time Slot Duration<span class="chili"></span></label>
+                                                                    <div class="col-md-9">
+                                                                        <select  name="time_slot_duration" formControlName="time_slot_duration"  class="form-control ctrl-textbox" placeholder="" >
+                                                                            <option value="15min">15min</option>
+                                                                            <option value="20min">20min</option>
+                                                                            <option value="25min">25min</option>
+                                                                            <option value="30min">30min</option>
+                                                                            <option value="40min">40min</option>
+                                                                            <option value="50min">50min</option>
+                                                                            <option value="60min">60min</option>
+                                                                            </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">									
+                                                                        <label  class="col-md-3 control-label" >In Time<span class="chili"></span></label>
+                                                                        <div class="col-md-9">
+                                                                            <input type="time" [max]="signUpForm.value.day_end_time" name="day_start_time" id="day_start_time"  formControlName="day_start_time"  class="form-control ctrl-textbox" placeholder="Enter email address"  >
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">									
+                                                                            <label  class="col-md-3 control-label" >Out Time<span class="chili"></span></label>
+                                                                            <div class="col-md-9">
+                                                                                <input type="time" [min]="signUpForm.value.day_start_time" name="day_end_time" id="day_end_time"  formControlName="day_end_time"  class="form-control ctrl-textbox" placeholder="Enter email address"  >
+                                                                            </div>
+                                                                        </div>	
+                                                                        <div class="form-group row"  >									
+                                                                                <label  class="col-md-3 control-label" >Location<span class="chili"></span></label>
+                                                                                <div class="col-md-4">
+                                                                                    <select (change)="getCitiesList($event)"   formControlName="state"  >
+                                                                                        <option style="display: none" selected>Select State</option>
+                                                                                        <option *ngFor="let item of stateArray" [value]="item.id" >{{item.name}}</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-1"></div>
+                                                                                <div class="col-md-4">
+                                                                                        <select formControlName="city"  >
+                                                                                                <option style="display: none" selected>Select City</option>
+                                                                                                <option *ngFor="let item of cityArray" [value]="item.name" >{{item.name}}</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                            </div>							
+                                                        </div>	
+                                                        <div class="row">
+                                                                <div class="col-md-3 "> 
+                                                                </div>
+                                                                <div class="col-md-9 "> 
+                                                                    <span *ngIf="plzFeelFieldCarefully" style="color: red">Please Fill The Form Carefully</span>
+                                                                    <span *ngIf="successfulyRegister" style="color:green">Succes Fully Registered</span>
+                                                                    <span *ngIf="errorMessage" style="color:red">  {{errorMessage}}</span>
+                                                                  
+                                                                </div>	
+        
+                                                            </div>
+                                                        <div class="row">
+                                                                <div class="col-md-3 "> 
+                                                                </div>
+                                                                <div class="col-md-9 "> 
+                                                                    <div id="paypal-button">
+                                                                        <div id="loading-3" style="display: none;"><img src='' /></div>
+                                                                        <button  id="" name="" (click)="Submit()" type="submit" class="btn-new btn-custom ctrl-btn"  >Submit  </button>
+                                                                    </div>	
+                                                                </div>	
+        
+                                                            </div>	
+                                                            <div class="row">
+                                                                    <div class="col-md-3 "> 
+                                                                    </div>
+                                                                    <div class="col-md-9 "> 
+                                                                        <div id="paypal-button1q">
+                                                                            Already have account ?
+                                                                            <a (click)="signup()">Login</a>
+                                                                        </div>	
+                                                                    </div>	
+                                                                                                        
+                                                                </div>														
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                        <br/>
+                                    </form>
+                                    <div style="display: none">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!--  end blog-single -->
+                </div>
+            </div> <!--  end blog-single -->
+        </div>

@@ -1,0 +1,20 @@
+
+<div class="container">
+  <h2 style="text-transform: capitalize">Dr. {{doctor.name}} <span style="text-transform: uppercase"> ({{DoctorID}})</span></h2>
+  <p>Spectialization :- <span *ngFor="let item of doctor.doctorType    ">{{item + ','}}</span></p>            
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        
+        <th *ngFor="let item of next7DateArray">{{item}}</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item1 of slotArray" >
+        <td *ngFor="let item of next7DateArray" [id]="item +'T'+item1" (click)="selectSlot( item +'T'+item1)">{{ item +'T'+item1 | date : 'short'}}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>

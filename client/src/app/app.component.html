@@ -1,0 +1,103 @@
+
+    <div class="uou-block-11a mobileMenu">
+        <h5 class="title">Menu</h5>
+        <a href="#" class="mobile-sidebar-close">X </a>
+        <nav class="main-nav">
+            <!-- <ul> -->
+
+
+            <ul id="menu-main-menu" class="">
+						  <li id="menu-item-595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-595 "><a href="http://www.doctorsdirectoryindia.com/">Home</a></li>
+                 
+    			<li id="menu-item-604" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-604 active"><a href="http://www.doctorsdirectoryindia.com/doctor">Doctor</a></li>
+                <li id="menu-item-603" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-603 "><a href="http://www.doctorsdirectoryindia.com/hospitals">Hospital</a></li>
+                <li id="menu-item-592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-592"><a href="http://www.doctorsdirectoryindia.com/alliedServices">Allied Services</a></li>
+               					<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a href="http://www.doctorsdirectoryindia.com/login/loginPage">Login</a></li>
+				<li id="menu-item-601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-601 "><a href="http://www.doctorsdirectoryindia.com/users/userRegistration/">User Registration</a></li>    
+			                  <li id="menu-item-598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-598 "><a href="#">Patient Education</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-600"><a href="http://www.doctorsdirectoryindia.com/immunization">Immunization</a></li>
+                        <li id="menu-item-597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-597"><a href="http://www.doctorsdirectoryindia.com/diseasesSignSystoms">Diseases-Signs & Symptoms</a></li>
+                        <li id="menu-item-599" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-599"><a href="http://www.doctorsdirectoryindia.com/humanAnatomy">Human Anatomy</a></li>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.doctorsdirectoryindia.com/drugsofabuse">Drugs Of Abuse</a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-593 "><a href="#">Medico legal</a>
+                    <ul class="sub-menu">
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.doctorsdirectoryindia.com/medicolegal/importantOrders">Important Orders</a></li>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.doctorsdirectoryindia.com/medicolegal/courtJudgements">Court Judgements</a></li>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.doctorsdirectoryindia.com/medicolegal/importantActs">Important Acts</a></li>
+                        <li  class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.doctorsdirectoryindia.com/medicolegal/governmentResolutions">Government Resolutions</a></li>
+                    </ul>
+                </li>
+                <li class="page_item page-item-15 "><a href="http://www.doctorsdirectoryindia.com/blog">Blog</a></li>
+
+            </ul>
+            <!-- </ul> -->
+        </nav>
+        <hr>
+    </div>
+    <div id="main-wrapper">
+        <div class="toolbar">
+          
+            <div class="box-shadow-for-ui">
+
+                <div class="uou-block-2b">
+
+                    <div  (click)="clicked()" class="container">
+                        <a class="logo" > <img style="height:70px;margin-top: -15px;" src="../../assets/img/medicaldirectory-logo.png" alt="image"> </a> 
+                        <a  class="mobile-sidebar-button mobile-sidebar-toggle"><span></span></a>
+                        <nav class="nav">
+                        </nav>
+                        <nav class="nav">
+                            <ul *ngIf="!islogined" id="menu-menu-1" class="sf-menu">
+                                <li (click)="clicked()" id="menu-item-42" [ngClass]="{'active': pageOn==='/' }" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-42  "><a  [routerLink]="[ '/' ]">Home</a></li>
+                                <li  (click)="clicked()" id="menu-item-55" [ngClass]="{'active': pageOn==='/doctorsLogin' }"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a  routerLink="/doctorsLogin">Doctors Portal</a></li>
+                                <!-- <li  (click)="clicked()"  id="menu-item-56" [ngClass]="{'active': pageOn==='/appointmentStatus' }"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56 "><a routerLink="/appointmentStatus">Appointment Status</a></li> -->
+
+                            </ul>		
+                            <ul *ngIf="islogined" id="menu-menu-1" class="sf-menu">
+                                    <li (click)="clicked()" id="menu-item-42" [ngClass]="{'active': pageOn==='/doctorsDashboard' }" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-42  "><a  [routerLink]="[ '/doctorsDashboard' ]">Dashboard</a></li>
+                                    <li  (click)="clicked()" id="menu-item-55" [ngClass]="{'active': pageOn==='/userReports' }"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a  routerLink="/userReports">Reports</a></li>
+                                    <li  (click)="clicked()"  id="menu-item-56" [ngClass]="{'active': pageOn==='/appointmentStatus' }"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56 "><a (click)="logout()">Logout</a></li>
+    
+                                </ul>			</nav>
+                    </div>
+                </div> <!-- end .uou-block-2b -->
+            </div>
+        </div><style>
+    .pagination  li a{
+        border: 1px solid #0099fe;
+        color: #0099fe;
+        padding: 1px 10px;
+    }
+    .stars i {
+    color: #0099ff;
+    }
+</style>
+<router-outlet>
+    </router-outlet>
+    </div>
+    
+
+
+<!-- end .uou-block-4e -->
+<!-- Start Bottom 7 -->
+<!-- uou block 4b -->
+<div class="uou-block-4a secondary">
+    <div class="container">
+        <p>
+            <a  href="http://www.clouditsolutions.com ">© Copyright 2020  </a>
+            Arpit Agrawal.
+            All rights reserved. &nbsp;&nbsp;&nbsp;
+        </p>
+
+    </div>
+</div>
+<!-- end .uou-block-4a -->
+<!--<script type='text/javascript' src='js/comment-reply.min.js'></script>
+<script type='text/javascript' src='js/hoverIntent.min.js'></script>
+<script type='text/javascript' src='assets/lib/bower/flexslider/jquery.flexslider-min.js'></script>
+-->
+
+

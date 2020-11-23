@@ -1,0 +1,76 @@
+<div>
+        <div id="top-search" class=" navbar-default navbar listing-search ">
+          <div class=" navbar-collapse text-left">
+            <form class="form-inline advanced-serach" >
+              <div class="container">
+                <div class="input-field ">
+                  <div class="form-group top-8">
+                    <select name="avalablity" (change)="selectFilter($event)" class=form-control>
+
+                      <option  value="Appointment Summary Report">Appointment Summary Report</option>
+                      <option  value="Appointment Detailed Report">Appointment Detailed Report</option>
+                  
+      
+                    </select>
+                  </div>
+                 
+      
+                
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+      <h2>Appointments Details</h2>
+      <table *ngIf="filter === 'Appointment Summary Report'" class="table table-condensed">
+            <thead>
+              <tr>
+                    <th >Date</th>
+                
+                <th ># of Appointments</th>
+                <th ># of Appointment Open</th>
+                <th ># of Appointment Closed</th>
+                <th ># of Appointment Cancelled</th>
+
+               
+              </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let item1 of appointment" >
+                        <td>{{item1._id | date:'mediumDate'}}</td>
+                        <td>{{item1.total}}</td>
+                        <td>{{item1.open}}</td>
+                        <td>{{item1.Closed}}</td>
+                        <td>{{item1.Cancelled }}</td>
+                       
+                        </tr>
+                </tbody>
+                </table>
+                <table *ngIf="filter !== 'Appointment Summary Report'" class="table table-condensed">
+                        <thead>
+                          <tr>
+                                <th >Date</th>
+                            
+                            <th >Patient Name</th>
+                            <th >Status</th>
+            
+                           
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let item1 of appointment">
+                           
+                                    <tr *ngFor="let item of item1.appointments;let indexOfelement=index;" >
+                                            <td *ngIf="indexOfelement === 0">{{item1._id | date:'mediumDate'}}</td>
+                                            <td *ngIf="indexOfelement !== 0"></td>
+                                            <td>{{item.patient_name}}</td>
+                                            <td>{{item.appointment_status}}</td>
+                                     
+                                           
+                                            </tr>
+                           
+                                
+                            </tbody>
+                            </table>
+      </div>

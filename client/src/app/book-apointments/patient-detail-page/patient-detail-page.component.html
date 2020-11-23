@@ -1,0 +1,67 @@
+<div  class="breadcrumb-content">
+        <img   src="../../assets/images/banner-breadcrumb.jpg" alt="banner">
+        <div class="container">
+            <h3>Patient Details</h3>
+        </div>
+    </div>	
+<div class="container">
+        <h2 style="text-transform: capitalize"> Appointment ID :- <span style="text-transform: uppercase"> {{aponitmentID}}</span></h2>
+
+        <h2 style="text-transform: capitalize"> Slot Time :- {{slotTime | date :'short'}} </h2>
+        <div class="form-content">
+                <div class="row">	
+                    <div class="col-md-12"> 
+                        <div  [formGroup] = "signUpForm">
+                            <div id="selected-column-1" class=" ">
+                                <div class="text-center" id="loading"> </div>
+                                <div class="form-group row"  >									
+                                    <label  class="col-md-3 control-label">Name<span class="chili"></span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" formControlName="name"  name="firstname"   class="form-control ctrl-textbox" placeholder="Enter First Name"  >
+                                    </div>
+                                </div>
+                                <div class="form-group row"  >									
+                                    <label  class="col-md-3 control-label">Contact Number<span class="chili"></span></label>
+                                    <div class="col-md-9">
+                                        <input type="text"  name="number"  formControlName="number"    class="form-control ctrl-textbox" placeholder="Enter Last Name"  >
+                                    </div>
+                                </div>
+                                <div class="form-group row">									
+                                    <label  class="col-md-3 control-label" >Email Address<span class="chili"></span></label>
+                                    <div class="col-md-9">
+                                        <input type="email" name="email" id="email1"  formControlName="email"  class="form-control ctrl-textbox" placeholder="Enter email address"  >
+                                    </div>
+                                </div>
+                               
+                            
+
+                            </div>
+                            					
+                        </div>	
+                        <div class="row">
+                                <div class="col-md-3 "> 
+                                </div>
+                                <div class="col-md-9 "> 
+                                    <span *ngIf="plzFeelFieldCarefully" style="color: red">Please Fill The Form Carefully</span>
+                                    <span *ngIf="successfulyRegister" style="color:green">Apointment Booked Succesfuly</span>
+                                    <span *ngIf="errorMessage" style="color:red">  {{errorMessage}}</span>
+                                  
+                                </div>	
+
+                            </div>
+                        <div class="row">
+                                <div class="col-md-3 "> 
+                                </div>
+                                <div class="col-md-9 "> 
+                                    <div id="paypal-button">
+                                        <div id="loading-3" style="display: none;"><img src='' /></div>
+                                        <button  id="" name="" (click)="Submit()" type="submit" class="btn-new btn-custom ctrl-btn"  >Submit  </button>
+                                    </div>	
+                                </div>	
+
+                            </div>															
+
+                    </div>
+                </div>
+            </div>   
+    </div>
